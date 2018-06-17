@@ -29,7 +29,7 @@ $(function() {
      */
 
     it("have URLs defined", function() {
-      for (i = 0; i < allFeeds.length; i ++) {
+      for (i = 0; i < allFeeds.length; i++) {
         expect("url").toBeDefined();
         expect("url").not.toBe("#");
       };
@@ -41,7 +41,7 @@ $(function() {
      */
 
     it("have names defined", function() {
-      for (i = 0; i < allFeeds.length; i ++) {
+      for (i = 0; i < allFeeds.length; i++) {
         expect("name").toBeDefined();
         expect("name").not.toBe("");
       };
@@ -79,14 +79,12 @@ $(function() {
      * a single .entry element within the .feed container
      */
 
-    let entries = $('.tpl-entry');
     beforeEach(function(done) {
-      loadFeed(0);
-      done();
+      loadFeed(0, done);
     });
 
     it("are present in the .feed container", function(done) {
-      expect(entries.length).toBeGreaterThan(0);
+      expect($(".feed").children().length).toBeGreaterThan(0);
       done();
     });
   });
